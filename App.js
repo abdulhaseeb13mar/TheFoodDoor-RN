@@ -11,10 +11,10 @@ import {RootSiblingParent} from 'react-native-root-siblings';
 import {Provider} from 'react-redux';
 import store from './FdRedux/FdStore';
 import Routes from './Fdroutes';
-//import RNBootSplash from 'react-native-bootsplash';
+import RNBootSplash from 'react-native-bootsplash';
 
 const App: () => React$Node = () => {
-  //RNBootSplash.hide();
+  RNBootSplash.hide();
   return (
     <RootSiblingParent>
       <Provider store={store}>

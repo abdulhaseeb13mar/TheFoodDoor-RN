@@ -8,9 +8,7 @@ import {H_W} from '../FdComp/FdDim';
 import {colors} from '../FdComp/FdColor';
 import {Button, Overlay} from 'react-native-elements';
 import Entypo from 'react-native-vector-icons/Entypo';
-import Feather from 'react-native-vector-icons/Feather';
-import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import {isFormValid} from '../FdComp/Fdvalidation';
 import NavPointer from '../FdComp/FdRefNavigation';
 import {FdUserAction, FdresetCart} from '../FdRedux/FdActions';
@@ -71,7 +69,7 @@ const ConfirmOrder = (props) => {
             address: address,
             phonenumber: phone,
             email: email,
-            appname: 'SweetnSticky',
+            appname: 'The Food Door',
           }),
         },
       );
@@ -120,25 +118,23 @@ const ConfirmOrder = (props) => {
   const changeFirstName = (t) => setFirstName(t);
 
   return (
-    <WrapperScreen style={{backgroundColor: 'white'}}>
+    <WrapperScreen
+      style={{backgroundColor: 'white'}}
+      barStyle="light-content"
+      statusColor={colors.primary}>
       <KeyboardAwareScrollView style={styles.container} bounces={false}>
-        <UseHeader
-          leftIcon={Entypo}
-          leftIconName="chevron-left"
-          leftIconAction={FdGoBack}
-          rightIconAction={() => props.FdresetCart()}
-          leftIconColor="black"
-          Title={<Text style={{color: 'black', fontSize: 22}}>Checkout</Text>}
-        />
+        <View style={styles.FdContact1}>
+          <UseHeader
+            leftIcon={Entypo}
+            leftIconName="chevron-left"
+            leftIconColor="white"
+            leftIconAction={FdGoBack}
+            Title={<Text style={styles.FdContact2}>Checkout</Text>}
+          />
+        </View>
 
-        <Text
-          style={{
-            marginLeft: H_W.width * 0.03,
-            fontSize: 20,
-            fontWeight: 'bold',
-            marginVertical: HEIGHT * 0.015,
-          }}>
-          Personal Information
+        <Text style={{...styles.FdContact3, marginVertical: HEIGHT * 0.015}}>
+          Contact Info
         </Text>
         <View style={styles.FdPersonalInfoWrapper}>
           <View style={styles.FdSinglePersonalInfoWrapper}>
@@ -156,11 +152,6 @@ const ConfirmOrder = (props) => {
                 onChangeText={changeFirstName}
                 placeholderTextColor={colors.lightGrey3}
               />
-              <Feather
-                name="user"
-                size={H_W.width * 0.07}
-                style={styles.FdInputIcon}
-              />
             </View>
           </View>
           <View style={styles.FdSinglePersonalInfoWrapper}>
@@ -169,7 +160,7 @@ const ConfirmOrder = (props) => {
                 ...styles.FdPersonalInfoHeadingName,
                 color: emailErrMsg ? 'red' : 'black',
               }}>
-              EMAIL ADDRESS<Text> {emailErrMsg}</Text>
+              EMAIL<Text> {emailErrMsg}</Text>
             </Text>
             <View style={styles.FdPersonalInfoInputWrapper}>
               <TextInput
@@ -177,11 +168,6 @@ const ConfirmOrder = (props) => {
                 style={{...styles.Input, height: HEIGHT * 0.065}}
                 onChangeText={changeEmail}
                 placeholderTextColor={colors.lightGrey3}
-              />
-              <FontAwesome5
-                name="envelope"
-                size={H_W.width * 0.07}
-                style={styles.FdInputIcon}
               />
             </View>
           </View>
@@ -191,7 +177,7 @@ const ConfirmOrder = (props) => {
                 ...styles.FdPersonalInfoHeadingName,
                 color: phoneErrMsg ? 'red' : 'black',
               }}>
-              CONTACT<Text> {phoneErrMsg}</Text>
+              PHONE NUMBER<Text> {phoneErrMsg}</Text>
             </Text>
             <View style={styles.FdPersonalInfoInputWrapper}>
               <TextInput
@@ -200,11 +186,6 @@ const ConfirmOrder = (props) => {
                 style={{...styles.Input, height: HEIGHT * 0.065}}
                 onChangeText={changePhone}
                 placeholderTextColor={colors.lightGrey3}
-              />
-              <FontAwesome5
-                name="phone"
-                size={H_W.width * 0.07}
-                style={styles.FdInputIcon}
               />
             </View>
           </View>
@@ -219,31 +200,21 @@ const ConfirmOrder = (props) => {
             <View style={styles.FdPersonalInfoInputWrapper}>
               <TextInput
                 placeholder="Address"
-                style={{...styles.Input, height: HEIGHT * 0.065}}
+                style={{...styles.Input, height: HEIGHT * 0.13}}
                 onChangeText={changeAddress}
+                multiline
                 placeholderTextColor={colors.lightGrey3}
-              />
-              <FontAwesome5
-                name="map-marker-alt"
-                size={H_W.width * 0.07}
-                style={styles.FdInputIcon}
               />
             </View>
           </View>
         </View>
-        <Text
-          style={{
-            marginLeft: H_W.width * 0.03,
-            fontSize: 20,
-            fontWeight: 'bold',
-            marginVertical: HEIGHT * 0.015,
-          }}>
-          Order Details
+        <Text style={{...styles.FdContact4, marginVertical: HEIGHT * 0.015}}>
+          Details
         </Text>
         <View style={{...styles.FdSummaryOverlay, marginBottom: HEIGHT * 0.02}}>
           <View style={styles.FdSm1}>
             <View style={styles.FdSm2}>
-              <Text style={{fontSize: 23}}>Total:</Text>
+              <Text style={{fontSize: 23}}>Total Amount:</Text>
               <Text style={{fontWeight: 'bold', fontSize: 23}}>
                 ${props.total}
               </Text>
@@ -254,25 +225,6 @@ const ConfirmOrder = (props) => {
             </View>
           </View>
         </View>
-        <View
-          style={{
-            ...styles.FdConfirmButtonWrapper,
-            marginBottom: HEIGHT * 0.02,
-          }}>
-          <Button
-            title="CONFIRM ORDER"
-            raised
-            containerStyle={styles.FdConfirmButtonContainer}
-            buttonStyle={{
-              ...styles.FdConfirmButton,
-              padding: HEIGHT * 0.018,
-            }}
-            titleStyle={{color: 'white', fontWeight: 'bold'}}
-            loadingProps={{color: 'black'}}
-            loading={loading}
-            onPress={FdConfirm}
-          />
-        </View>
         <Overlay
           onBackdropPress={closeModal}
           isVisible={showModal}
@@ -282,10 +234,10 @@ const ConfirmOrder = (props) => {
               ...styles.FdModalWrapper,
               paddingVertical: HEIGHT * 0.04,
             }}>
-            <MaterialCommunityIcons
-              name="shoe-heel"
+            <Ionicons
+              name="fast-food-sharp"
               size={H_W.width * 0.25}
-              color={colors.primary}
+              color="white"
             />
             <Text style={styles.FdModalHeadText}>THANK YOU!</Text>
             <Text style={styles.FdModalSubText}>
@@ -294,6 +246,24 @@ const ConfirmOrder = (props) => {
           </View>
         </Overlay>
       </KeyboardAwareScrollView>
+      <View
+        style={{
+          marginBottom: -insets.bottom,
+          paddingBottom: insets.bottom,
+          backgroundColor: colors.primary,
+        }}>
+        <Button
+          loading={loading}
+          onPress={FdConfirm}
+          disabled={props.FdTotalItems === 0}
+          title="CONFIRM ORDER"
+          titleStyle={{fontWeight: 'bold', fontSize: 20}}
+          buttonStyle={{
+            paddingVertical: HEIGHT * 0.02,
+            backgroundColor: colors.primary,
+          }}
+        />
+      </View>
     </WrapperScreen>
   );
 };
@@ -309,6 +279,23 @@ export default connect(mapStateToProps, {FdUserAction, FdresetCart})(
 );
 
 const styles = StyleSheet.create({
+  FdContact1: {
+    backgroundColor: colors.primary,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+    alignItems: 'center',
+  },
+  FdContact2: {
+    color: 'white',
+    fontSize: 22,
+  },
+  FdContact3: {
+    marginLeft: H_W.width * 0.03,
+    fontSize: 20,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  FdContact4: {marginLeft: H_W.width * 0.03, fontSize: 20, fontWeight: 'bold'},
   FdSm4: {fontSize: H_W.width * 0.045, fontWeight: 'bold'},
   FdSm3: {
     flexDirection: 'row',
@@ -338,6 +325,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.3,
+    shadowRadius: 4.65,
   },
   FdModalSubText: {
     fontSize: H_W.width * 0.045,
@@ -349,12 +343,14 @@ const styles = StyleSheet.create({
     fontSize: H_W.width * 0.09,
     fontWeight: 'bold',
     textAlign: 'center',
+    color: 'white',
   },
   FdModalWrapper: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     width: H_W.width * 0.8,
+    backgroundColor: colors.primary,
   },
   FdConfirmButtonContainer: {
     width: '100%',
@@ -400,8 +396,6 @@ const styles = StyleSheet.create({
     backgroundColor: colors.lightGrey4,
     paddingHorizontal: H_W.width * 0.02,
     borderRadius: 1,
-    borderWidth: 1,
-    borderColor: colors.secondary,
   },
   FdPersonalInfoHeadingName: {
     fontSize: 13,

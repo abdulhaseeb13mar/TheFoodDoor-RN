@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TheFoodDoorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TheFoodDoorTests.m */; };
+		0FEBB150260A3612001FFD29 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FEBB14F260A3612001FFD29 /* BootSplash.storyboard */; };
+		0FEBB151260A3612001FFD29 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FEBB14F260A3612001FFD29 /* BootSplash.storyboard */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -16,7 +18,6 @@
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TheFoodDoorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TheFoodDoorTests.m */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A8DD1A69BC6FFC7383A0818F /* libPods-TheFoodDoor-TheFoodDoorTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 47957A34ABD7960B3B362D19 /* libPods-TheFoodDoor-TheFoodDoorTests.a */; };
 		E6BFDE03B7F67D79C04F3FE8 /* libPods-TheFoodDoor-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B7D03B7961E89779DD5F0CC /* libPods-TheFoodDoor-tvOSTests.a */; };
 		EED11164FD0233E52575DB39 /* libPods-TheFoodDoor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A6426BD0EFAD362F189EA766 /* libPods-TheFoodDoor.a */; };
@@ -44,6 +45,7 @@
 		00E356EE1AD99517003FC87E /* TheFoodDoorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheFoodDoorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* TheFoodDoorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TheFoodDoorTests.m; sourceTree = "<group>"; };
+		0FEBB14F260A3612001FFD29 /* BootSplash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BootSplash.storyboard; sourceTree = "<group>"; };
 		116EDC1E9CB6400B8E913DF9 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		11BCCEE6A25B822AC00BAF54 /* Pods-TheFoodDoor-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheFoodDoor-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-TheFoodDoor-tvOSTests/Pods-TheFoodDoor-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* TheFoodDoor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheFoodDoor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +68,6 @@
 		65D057D5C9B6423998D7D47E /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		68775E8A22D04F3689B63E8E /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		70F1452AD4BC4BC2AC04B7CA /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TheFoodDoor/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EE080E55657FCD7611E2E18 /* Pods-TheFoodDoor-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheFoodDoor-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-TheFoodDoor-tvOS/Pods-TheFoodDoor-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		A1D1450FDEAF81440111AE09 /* Pods-TheFoodDoor-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheFoodDoor-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-TheFoodDoor-tvOSTests/Pods-TheFoodDoor-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6426BD0EFAD362F189EA766 /* libPods-TheFoodDoor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TheFoodDoor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,8 +147,8 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				0FEBB14F260A3612001FFD29 /* BootSplash.storyboard */,
 			);
 			name = TheFoodDoor;
 			sourceTree = "<group>";
@@ -381,8 +382,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				0FEBB150260A3612001FFD29 /* BootSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+				0FEBB151260A3612001FFD29 /* BootSplash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

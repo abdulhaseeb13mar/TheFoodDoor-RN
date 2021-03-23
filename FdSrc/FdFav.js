@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {connect} from 'react-redux';
-import {Text} from 'react-native';
+import {Text, View, StyleSheet} from 'react-native';
 import {
   FdremoveFavAction,
   FdsetFavAction,
@@ -9,9 +9,11 @@ import {
 } from '../FdRedux/FdActions';
 import Entypo from 'react-native-vector-icons/Entypo';
 import UseHeader from '../FdComp/FdHeader';
+import {colors} from '../FdComp/FdColor';
 import WrapperScreen from '../FdComp/FdWrapperScreen';
+import Loop from '../FdComp/FdFlatList';
 import NavigationRef from '../FdComp/FdRefNavigation';
-import {FdHorizontalTile} from './FdHome';
+import {FdVerticalTile} from './FdHome';
 
 const FdFavourites = (props) => {
   const FdGoToSingleProduct = (item) => {
@@ -22,29 +24,41 @@ const FdFavourites = (props) => {
   const FdGoBack = () => NavigationRef.Navigate('FdHome');
 
   return (
-    <WrapperScreen style={{backgroundColor: 'white'}}>
-      <UseHeader
-        leftIcon={Entypo}
-        leftIconName="chevron-left"
-        leftIconColor="black"
-        leftIconAction={FdGoBack}
-        Title={
-          <Text
-            style={{
-              color: 'black',
-              fontSize: 22,
-            }}>
-            {props.FdFavs.length} Favourites
-          </Text>
-        }
-      />
-      {props.FdFavs.map((item, index) => (
-        <FdHorizontalTile
-          key={index}
-          item={item}
-          FdGoToSingleProduct={FdGoToSingleProduct}
+    <WrapperScreen
+      style={{backgroundColor: 'white'}}
+      barStyle="light-content"
+      statusColor={colors.primary}>
+      <View style={{flex: 1}}>
+        <Loop
+          numColumns={2}
+          horizontal={false}
+          data={props.FdFavs}
+          renderItem={({item}) => (
+            <FdVerticalTile
+              item={item}
+              FdGoToSingleProduct={FdGoToSingleProduct}
+              FdFavs={props.FdFavs}
+              FdsetFav={(fd) => props.FdsetFavAction(fd)}
+              FdremoveFav={(fd) => props.FdremoveFavAction(fd)}
+            />
+          )}
+          ListHeaderComponent={
+            <View style={styles.FdFav1}>
+              <UseHeader
+                leftIcon={Entypo}
+                leftIconName="chevron-left"
+                leftIconColor="white"
+                leftIconAction={FdGoBack}
+                Title={
+                  <Text style={styles.FdFav2}>
+                    {props.FdFavs.length} Favourites
+                  </Text>
+                }
+              />
+            </View>
+          }
         />
-      ))}
+      </View>
     </WrapperScreen>
   );
 };
@@ -60,3 +74,17 @@ export default connect(mapStateToProps, {
   FdsetCurrentProductAction,
   FdremoveFavAction,
 })(FdFavourites);
+
+const styles = StyleSheet.create({
+  FdFav1: {
+    backgroundColor: colors.primary,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+  },
+  FdFav2: {
+    color: 'white',
+    fontSize: 22,
+  },
+  FdFav3: {},
+  FdFav4: {},
+});

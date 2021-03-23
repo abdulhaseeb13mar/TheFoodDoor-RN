@@ -6,12 +6,12 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import Navigator from './FdComp/FdRefNavigation';
 import FdHome from './FdSrc/FdHome';
-// import FdSP from './FdSrc/FdSP';
-// import FdFav from './FdSrc/FdFav';
-// import FdCart from './FdSrc/FdCart';
-// import FdContact from './FdSrc/FdContact';
+import FdSP from './FdSrc/FdSP';
+import FdFav from './FdSrc/FdFav';
+import FdCart from './FdSrc/FdCart';
+import FdContact from './FdSrc/FdContact';
 // import FdConfirmOrder from './FdSrc/FdConfirmOrder';
-// import FdSearch from './FdSrc/FdSearch';
+import FdSearch from './FdSrc/FdSearch';
 const Stack = createStackNavigator();
 
 function Routes(props) {
@@ -27,12 +27,12 @@ function Routes(props) {
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         }}>
         <Stack.Screen name="FdHome" component={FdHome} />
-        {/* <Stack.Screen name="FdSP" component={FdSP} /> */}
-        {/* <Stack.Screen name="FdFav" component={FdFav} /> */}
-        {/* <Stack.Screen name="FdCart" component={FdCart} /> */}
-        {/* <Stack.Screen name="FdContact" component={FdContact} /> */}
+        <Stack.Screen name="FdSP" component={FdSP} />
+        <Stack.Screen name="FdFav" component={FdFav} />
+        <Stack.Screen name="FdCart" component={FdCart} />
+        <Stack.Screen name="FdContact" component={FdContact} />
         {/* <Stack.Screen name="FdConfirmOrder" component={FdConfirmOrder} /> */}
-        {/* <Stack.Screen name="FdSearch" component={FdSearch} /> */}
+        <Stack.Screen name="FdSearch" component={FdSearch} />
       </Stack.Navigator>
     </NavigationContainer>
   );
